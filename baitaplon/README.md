@@ -1,15 +1,28 @@
-# VnExpress Scraper
+# VnExpress News Scraper
 
-## Giới thiệu
-Dự án này là một công cụ web scraping viết bằng Python dùng để thu thập dữ liệu từ trang web VnExpress. Các dữ liệu thu thập được bao gồm:
-- Tiêu đề bài viết
-- Mô tả bài viết
-- Hình ảnh trong bài viết
-- Nội dung bài viết
+Thu thập dữ liệu bài viết từ trang https://vnexpress.net theo chuyên mục như Công nghệ, Kinh doanh, Giải trí, v.v.
 
-## Cài đặt
-Để sử dụng dự án này, bạn cần cài đặt các thư viện cần thiết bằng cách sử dụng `pip`:
+## ✅ Chức năng
+- Tự động quét bài viết mới
+- Lưu vào file CSV
+- Thiết lập chạy mỗi ngày lúc 6h sáng
 
-1. Cài đặt các thư viện cần thiết:
-   ```bash
-   pip install -r requirements.txt
+## 🔧 Cài đặt
+```bash
+git clone https://github.com/KhanhPG169/vnexpress-scraper
+
+cd vnexpress_scraper
+
+Cài thư viện cần thiết
+Chạy lệnh: pip install -r requirements.txt
+
+Chạy file baitaplonv2.py:
+Chạy lệnh: python baitaplonv2.py
+✅ Chương trình sẽ chạy nền và đợi đến 6h sáng mỗi ngày để tự động lấy dữ liệu và lưu file CSV trong thư mục data/.
+
+✅ (Tuỳ chọn) Kiểm tra nhanh chương trình hoạt động
+Bạn có thể tạm thời sửa dòng này để test ngay (thay vì đợi 6h sáng):
+schedule.every().day.at("06:00").do(job)
+➡ Sửa thành:
+schedule.every(1).minutes.do(job)  # Test mỗi phút
+Sau khi test xong, nhớ đổi lại về 06:00.
